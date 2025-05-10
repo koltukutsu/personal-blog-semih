@@ -1,29 +1,5 @@
 {
   "posts": [
-    {
-      "id": "future-of-innovation",
-      "date": "January 15, 2025",
-      "title": "Beyond AI: Five Convergent Forces Reshaping Innovation This Decade"
-    },
-    {
-      "id": "founder-psychology",
-      "date": "February 10, 2025",
-      "title": "Founder Psychology: Mental Models for Building Resilient Companies"
-    },
-    {
-      "id": "understanding-environments",
-      "date": "March 5, 2025",
-      "title": "Understanding Environments: The Future of Ambient Intelligence"
-    },
-    {
-      "id": "resilient-innovation",
-      "date": "April 12, 2025",
-      "title": "Resilient Innovation: Building Technology for Uncertain Times"
-    },
-    {
-      "id": "authentic-personal-branding",
-      "date": "May 20, 2025", 
-      "title": "Authentic Personal Branding in the Age of AI"
-    }
+    
   ]
 }

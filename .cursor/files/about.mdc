@@ -3,15 +3,8 @@ description: This is for the marketing side of Mehmet Semih Babacan
 globs: 
 alwaysApply: false
 ---
----
-description: This is for the marketing side of Mehmet Semih Babacan, it is solely about his personal branding
-globs: *
-alwaysApply: false
----
 
 # Mehmet Semih Babacan: Visionary Tech Founder & Innovation Leader
-
-this is solely about personal branding and creating the peresonal brand of Mehmet Semih Babacan
 
 ## Who is Semih?
 

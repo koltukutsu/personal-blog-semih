@@ -3,11 +3,6 @@ description: This is for the general structure of the web app and programming ru
 globs: 
 alwaysApply: false
 ---
----
-description: This is for the general structure of the web app and programming rules
-globs: *
-alwaysApply: false
----
 
 # Web App Structure & Programming Rules - Mehmet Semih Babacan
 

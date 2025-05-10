@@ -1,9 +1,6 @@
-import { Posts } from "./posts";
-import { getPosts } from "./get-posts";
+import { redirect } from 'next/navigation';
+import { defaultLanguage } from './layout';
 
-export const revalidate = 60;
-
-export default async function Home() {
-  const posts = await getPosts();
-  return <Posts posts={posts} />;
+export default function Home() {
+  redirect(`/${defaultLanguage}`);
 }

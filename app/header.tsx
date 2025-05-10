@@ -1,30 +1,43 @@
 import { ThemeToggle } from "./theme-toggle";
 import { Logo } from "./logo";
 import Link from "next/link";
+import LanguageSwitcher from "./components/LanguageSwitcher";
 
-export function Header() {
+export function Header({ dictionary, lang = 'en' }: { dictionary?: any, lang?: string }) {
   return (
-    <header className="flex mb-5 md:mb-10 items-center">
+    <header className="flex mb-5 md:mb-10 items-center flex-wrap">
       <Logo />
 
       <nav className="font-mono text-xs grow justify-end items-center flex gap-1 md:gap-3">
         <ThemeToggle />
 
         <Link
-          href="/about"
-          className="inline-flex hover:bg-gray-200 dark:hover:bg-[#313131] active:bg-gray-300 dark:active:bg-[#242424] rounded-sm p-2 transition-[background-color]"
+          href={`/${lang}/about`}
+          className="inline-flex text-black dark:text-white hover:bg-gray-200 dark:hover:bg-[#313131] active:bg-gray-300 dark:active:bg-[#242424] rounded-sm p-2 transition-[background-color]"
         >
-          About
+          {dictionary?.nav?.about || "About"}
         </Link>
-        <a
-          href="https://twitter.com/rauchg"
-          target="_blank"
-          className="inline-flex hover:bg-gray-200 dark:hover:bg-[#313131] active:bg-gray-300 dark:active:bg-[#242424] items-center p-2 rounded-sm transition-[background-color] whitespace-nowrap -mr-2"
+        
+        <Link
+          href={`/${lang}/introduction`}
+          className="inline-flex text-black dark:text-white hover:bg-gray-200 dark:hover:bg-[#313131] active:bg-gray-300 dark:active:bg-[#242424] rounded-sm p-2 transition-[background-color]"
         >
-          <TweetIcon style={{ marginRight: 4 }} /> Follow{" "}
-          <span className="hidden md:inline">&nbsp;me</span>
+          {dictionary?.nav?.introduction || "Introduction"}
+        </Link>
+        
+        <a
+          href="https://twitter.com/semihbabacan"
+          target="_blank"
+          className="inline-flex text-black dark:text-white hover:bg-gray-200 dark:hover:bg-[#313131] active:bg-gray-300 dark:active:bg-[#242424] items-center p-2 rounded-sm transition-[background-color] whitespace-nowrap -mr-2"
+        >
+          <TweetIcon style={{ marginRight: 4 }} /> {dictionary?.nav?.follow || "Follow"}{" "}
+          <span className="hidden md:inline">&nbsp;{dictionary?.nav?.me || "me"}</span>
         </a>
       </nav>
+      
+      <div className="w-full mt-3 flex justify-end">
+        <LanguageSwitcher />
+      </div>
     </header>
   );
 }
