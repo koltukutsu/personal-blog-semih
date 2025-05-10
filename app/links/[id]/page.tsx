@@ -3,19 +3,19 @@ import { headers } from "next/headers";
 import { redirect, notFound } from "next/navigation";
 
 export default async function Link(props: {
-  params: Promise<{ id: string }>;
-  searchParams: Promise<{ bot?: string }>;
+  params: { id: string };
+  searchParams: { bot?: string };
 }) {
-  const searchParams = await props.searchParams;
-  const params = await props.params;
-  const link = links[params.id];
+  const { bot } = props.searchParams;
+  const { id } = props.params;
+  const link = links[id];
 
   if (link == null) {
     return notFound();
   }
 
   if (
-    searchParams.bot ||
+    bot ||
     /bot/i.test((await headers()).get("user-agent") as string)
   ) {
     return <></>;

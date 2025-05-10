@@ -43,7 +43,16 @@ export async function generateStaticParams() {
   return params;
 }
 
-export default async function PostPage({ params }: { params: { slug: string[], lang: string } }) {
+interface MyCustomPostPageProps {
+  params: { 
+    slug: string[]; 
+    lang: string; 
+  };
+  searchParams?: { [key: string]: string | string[] | undefined };
+}
+
+export default async function PostPage(props: MyCustomPostPageProps) {
+  const { params, searchParams } = props;
   const locale = validateLocale(params.lang);
   
   // Get the year and slug from the path

@@ -38,7 +38,7 @@ export default async function AboutPage({ params: { lang } }: { params: { lang: 
         />
       </a>
 
-      <p>I'm a visionary tech entrepreneur from Turkey, currently serving as the co-founder of Solace. My passion lies in creating technology that genuinely understands and adapts to human needs.</p>
+      <p>I&apos;m a visionary tech entrepreneur from Turkey, currently serving as the co-founder of Solace. My passion lies in creating technology that genuinely understands and adapts to human needs.</p>
 
       <h2>{about.education}</h2>
 
