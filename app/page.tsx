@@ -1,6 +1,5 @@
-import { redirect } from 'next/navigation';
-import { defaultLanguage } from './layout';
+import { redirect } from "next/navigation";
 
 export default function Home() {
-  redirect(`/${defaultLanguage}`);
+  redirect("/about");
 }

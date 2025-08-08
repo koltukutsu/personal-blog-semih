@@ -5,34 +5,28 @@ import Link from "next/link";
 import { Suspense } from "react";
 import useSWR from "swr";
 import type { Post } from "./get-posts";
-import type { LocalizedPost } from "./posts-localized";
 import React from "react";
 
 type SortSetting = ["date" | "views", "desc" | "asc"];
 
 const fetcher = (url: string) => fetch(url).then(res => res.json());
 
-export function Posts({ posts: initialPosts, dictionary }: { posts: Post[] | LocalizedPost[], dictionary?: any }) {
+export function Posts({ posts: initialPosts }: { posts: Post[] }) {
   const [sort, setSort] = useState<SortSetting>(["date", "desc"]);
   
-  // Get dictionary translation for post list
   const tableLabels = {
-    date: dictionary?.post_list?.date || "date",
-    title: dictionary?.post_list?.title || "title",
-    views: dictionary?.post_list?.views || "views",
-    noContent: dictionary?.post_list?.noContent || "No content available"
+    date: "date",
+    title: "title",
+    views: "views",
+    noContent: "No content available",
   };
 
-  // Determine if we're using localized posts
-  const isUsingLocalizedPosts = initialPosts.length > 0 && 'lang' in initialPosts[0];
-  
-  // Only use SWR for non-localized posts to maintain language-specific posts
   const { data: posts } = useSWR(
-    isUsingLocalizedPosts ? null : "/api/posts", 
-    fetcher, 
+    "/api/posts",
+    fetcher,
     {
       fallbackData: initialPosts,
-      refreshInterval: isUsingLocalizedPosts ? 0 : 5000,
+      refreshInterval: 5000,
     }
   );
 
@@ -121,12 +115,9 @@ function List({ posts, sort }) {
         const lastOfYear =
           !sortedPosts[i + 1] || getYear(sortedPosts[i + 1].date) !== year;
 
-        // Determine the language path prefix
-        const langPrefix = 'lang' in post ? `/${post.lang}` : '';
-
         return (
           <li key={post.id}>
-            <Link href={`${langPrefix}/2025/${post.id}`}>
+            <Link href={`/2025/${post.id}`}>
               <span
                 className={`flex transition-[background-color] hover:bg-gray-100 dark:hover:bg-[#242424] active:bg-gray-200 dark:active:bg-[#222] border-y border-gray-200 dark:border-[#313131]
                 ${!firstOfYear ? "border-t-0" : ""}

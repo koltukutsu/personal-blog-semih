@@ -6,7 +6,6 @@ import { Analytics } from "./analytics";
 import { Header } from "./header";
 import { Footer } from "./footer";
 import { doge } from "./doge";
-import { getDictionary, validateLocale } from "./utils/i18n";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -34,23 +33,14 @@ export const viewport = {
   themeColor: "transparent",
 };
 
-// Set the supported languages for the application
-export const languages = ['en', 'tr', 'es'];
-export const defaultLanguage = 'en';
-
 export default async function RootLayout({
   children,
-  params
 }: {
   children: React.ReactNode;
-  params: { lang: string };
 }) {
-  const lang = validateLocale(params?.lang);
-  const dictionary = await getDictionary(lang);
-  
   return (
     <html
-      lang={lang}
+      lang="en"
       className={`${inter.className} antialiased`}
       suppressHydrationWarning={true}
     >
@@ -64,7 +54,7 @@ export default async function RootLayout({
 
       <body className="dark:text-gray-100 max-w-2xl m-auto">
         <main className="p-6 pt-3 md:pt-6 min-h-screen">
-          <Header dictionary={dictionary} lang={lang} />
+          <Header />
           {children}
         </main>
 
