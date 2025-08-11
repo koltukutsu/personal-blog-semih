@@ -1,6 +1,6 @@
-# Mehmet Semih Babacan - Personal Blog
+# Mehmet Semih Babacan - Personal Thoughts
 
-This is the blog that powers `semihbabacan.com`, built on
+This is the thoughts site that powers `semihbabacan.com`, built on
 [next.js](https://nextjs.org/) and
 deployed to the cloud via [Vercel](https://vercel.com).
 
@@ -55,9 +55,9 @@ is found under `./components/post/`
 
 These components make up the _style guide_ of the application.
 
-### Blog posts
+### Thought posts
 
-Every blog post is a static page hosted under `pages/$year/`.
+Every thought post is a static page hosted under `pages/$year/`.
 
 This allows every post to load arbitrary modules, have custom layouts
 and take advantage of automatic code splitting and lazy loading.

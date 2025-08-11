@@ -1,0 +1,50 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Mehmet Semih Babacan -- Software Engineer & Tech Entrepreneur
+    Contact: m.semihbabacan [at] gmail.com
+    LinkedIn: linkedin.com/in/mehmetsemihbabacan
+    GitHub: github.com/koltukutsu
+    Location: Istanbul, Turkey
+
+# THANKS
+
+    To all the open source contributors
+    To the Next.js and React communities
+    To the AI/ML research community
+    To TÜBİTAK for research opportunities
+    To Yıldız Technical University
+
+# TECHNOLOGY COLOPHON
+
+    ## Frontend
+    Next.js 15
+    React 19
+    TypeScript
+    Tailwind CSS
+    MDX
+
+    ## Backend & AI
+    Python
+    FastAPI
+    LangChain
+    PostgreSQL
+    WebSockets
+
+    ## Tools & Platforms
+    Vercel
+    GitHub
+    Docker
+    CI/CD
+
+    ## Development
+    Cursor
+    VS Code
+    Git
+
+    Last update: 2025/01/15
+    Standards: HTML5, CSS3, JavaScript ES6+
+    Components: Next.js App Router, React Server Components
+    Software: Built with modern web technologies

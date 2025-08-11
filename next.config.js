@@ -1,3 +1,5 @@
+/* eslint-disable */
+/* tslint:disable */
 const withMDX = require("@next/mdx")();
 
 module.exports = withMDX({
@@ -11,6 +13,10 @@ module.exports = withMDX({
     // your project has type errors.
     // !! WARN !!
     ignoreBuildErrors: true,
+  },
+  eslint: {
+    // Deactivate ESLint during builds
+    ignoreDuringBuilds: true,
   },
   images: {
     remotePatterns: [

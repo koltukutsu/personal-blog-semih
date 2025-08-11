@@ -1,0 +1,171 @@
+---
+description: Style guidelines and design system for Mehmet Semih Babacan's personal blog
+globs: ["**/*.{tsx,ts,css,mdx}"]
+alwaysApply: true
+---
+
+# Style Guidelines - Mehmet Semih Babacan Personal Blog
+
+## Design Philosophy
+
+This blog follows a **minimalist, elegant, and highly readable** design philosophy that prioritizes content and user experience. The style emphasizes:
+
+- **Clean Typography**: Inter font family for optimal readability
+- **Subtle Dark/Light Mode**: Seamless theme switching with system preference support
+- **Content-First Layout**: Maximum 70 characters width for optimal reading
+- **Professional Aesthetics**: Clean, modern design suitable for a tech entrepreneur's blog
+
+## Color Palette
+
+### Light Mode
+- **Background**: `#fcfcfc` (near-white with slight warmth)
+- **Text**: `rgb(0, 0, 0)` (pure black)
+- **Links**: `#0070f3` (blue)
+- **Code Background**: `rgba(0, 0, 0, 0.05)` (subtle gray)
+
+### Dark Mode  
+- **Background**: `#1C1C1C` (dark gray, not pure black)
+- **Text**: `rgb(255, 255, 255)` (pure white)
+- **Links**: `#3b82f6` (lighter blue)
+- **Hover States**: `#181818` and `#101010` for interactive elements
+
+### Accent Colors (Post Card Gradients)
+- **Blue**: `#0084d6` → `#005a9e`
+- **Teal**: `#00b09b` → `#007d8a`
+- **Green**: `#56ab2f` → `#267d1e`
+- **Orange**: `#ff7e5f` → `#e85c39`
+- **Purple**: `#8e44ad` → `#673195`
+- **Pink**: `#ec008c` → `#b9017a`
+
+## Typography System
+
+### Font Stack
+- **Primary**: Inter (variable font preferred, fallback to Inter sans-serif)
+- **Monospace**: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas
+
+### Hierarchy
+- **H1**: `2.25rem` (36px), `font-weight: 700`, `line-height: 1.3`
+- **H2**: `1.75rem` (28px), `font-weight: 600`, `line-height: 1.4`
+- **H3**: `1.5rem` (24px), `font-weight: 600`
+- **Body**: `16px` base, `line-height: 1.7` for optimal readability
+- **Article Content**: `1.05rem`, `line-height: 1.75` for enhanced reading
+
+### Code Typography
+- **Inline Code**: `0.9em`, padding `0.2em 0.4em`, subtle background
+- **Code Blocks**: `1rem` padding, rounded corners, scroll on overflow
+
+## Layout System
+
+### Container Widths
+- **Main Content**: `max-width: 2xl` (Tailwind: ~672px)
+- **Blog Content**: `max-width: 70ch` (optimal reading line length)
+- **Responsive**: Mobile-first approach with `md:` breakpoint adjustments
+
+### Spacing
+- **Paragraph Bottom**: `1.25rem`
+- **Heading Top**: `1.5rem` to `2rem`
+- **Heading Bottom**: `0.75rem` to `1.5rem`
+- **List Indentation**: `1.5rem`
+- **Component Padding**: `p-6` on main, `pt-3 md:pt-6`
+
+## Component Patterns
+
+### Interactive Elements
+- **Hover States**: Smooth transitions (0.2s ease)
+- **Active States**: Darker variants for feedback
+- **Theme Toggle**: Contextual icon switching (sun/moon)
+- **Links**: Underline on hover, color transitions
+
+### Navigation & Branding
+- **Logo**: Bold font weight, conditional rendering (home vs. other pages)
+- **Header**: Clean, minimal design with theme toggle
+- **Footer**: Subtle, doesn't compete with content
+
+### Content Components
+- **Post Cards**: Gradient backgrounds with vibrant colors
+- **Code Blocks**: Syntax highlighting with appropriate contrast
+- **Blockquotes**: Subtle styling that doesn't overwhelm
+- **Images**: Responsive with proper aspect ratios
+
+## Tailwind CSS Usage
+
+### Utility-First Approach
+- Use Tailwind utility classes as primary styling method
+- Custom CSS only for complex animations or global styles
+- Leverage Tailwind's dark mode with `dark:` prefix
+
+### Custom Extensions
+- **Theme System**: Custom `theme-system:` variant for automatic theme detection
+- **Hover Support**: `hoverOnlyWhenSupported: true` for better mobile experience
+- **Color Scheme**: CSS custom properties for dynamic theming
+
+### Component Organization
+- **Global Styles**: `app/globals.css` for base typography and theme variables
+- **Component-Specific**: Individual CSS files only when necessary (e.g., `tweet.css`)
+- **Gradient Utilities**: Centralized gradient classes in `post-card-gradients.css`
+
+## Accessibility Standards
+
+### Color Contrast
+- Ensure WCAG AA compliance in both light and dark modes
+- Test interactive states for sufficient contrast
+- Provide clear focus indicators
+
+### Typography
+- Maintain readable font sizes (minimum 16px base)
+- Optimal line heights for comfortable reading
+- Sufficient color contrast for all text elements
+
+### Responsive Design
+- Mobile-first approach with progressive enhancement
+- Touch-friendly interactive elements (minimum 44px tap targets)
+- Readable typography on all screen sizes
+
+## Performance Considerations
+
+### Font Loading
+- Use Inter variable font when supported
+- Preload critical font weights
+- Fallback to system fonts during loading
+
+### CSS Optimization
+- Utilize Tailwind's purging for minimal CSS bundle
+- Critical CSS inlined for immediate rendering
+- Smooth transitions without performance impact
+
+### Theme Switching
+- Instant theme switching with localStorage persistence
+- No flash of unstyled content (FOUC)
+- System preference detection and automatic switching
+
+## Implementation Guidelines
+
+### Class Naming
+- Use Tailwind utilities primarily
+- Semantic class names for complex components (`.blog-content`, `.post-list-item`)
+- BEM methodology for custom CSS when needed
+
+### State Management
+- Theme state managed with localStorage and system preferences
+- Smooth transitions for all interactive states
+- Consistent hover and active states across components
+
+### Code Quality
+- Consistent formatting with Prettier
+- TypeScript for all React components
+- Clear prop interfaces for reusable components
+
+## File Organization
+
+### Styling Files
+- `app/globals.css` - Global styles and theme variables
+- `app/components/post-card-gradients.css` - Gradient utilities
+- `tailwind.config.js` - Tailwind configuration and custom variants
+- `postcss.config.js` - PostCSS processing configuration
+
+### Component Structure
+- Co-locate component-specific styles when needed
+- Use TypeScript interfaces for component props
+- Maintain consistent export patterns
+
+This style guide ensures consistency across the blog while maintaining the elegant, minimalist aesthetic that reflects the professional quality expected from a tech entrepreneur's personal brand.
