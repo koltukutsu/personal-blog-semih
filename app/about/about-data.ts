@@ -84,6 +84,29 @@ export const aboutData = {
         ]
       },
       {
+        name: "AI Chess Arena - Local Gemma 3 Fine-Tuned",
+        description: "Local AI chess arena where fine-tuned Gemma 3 models battle each other. Features hardware-adaptive training, real-time inference server, and professional GUI with beautiful SVG-based pieces. Optimized for Intel integrated graphics.",
+        technologies: ["Python", "Gemma 3", "LoRA Fine-tuning", "FastAPI", "Pygame", "PyTorch", "PEFT", "Intel GPU Optimization"],
+        role: "AI Engineer & Full-Stack Developer",
+        status: "Complete",
+        github: "https://github.com/koltukutsu/gemma-3-local-fine-tuned-chess",
+
+        images: [
+          "/images/featured-projects/chess-arena.png"
+        ],
+        detailedDescription: "AI Chess Arena is a complete local AI system that fine-tunes Google's Gemma 3 270m model on chess instruction data and creates AI vs AI battles. The project features intelligent hardware detection with automatic fallback training methods (Unsloth for NVIDIA, standard transformers for most hardware, Intel-optimized for integrated graphics). Built a FastAPI inference server for real-time move prediction and a professional Pygame GUI with SVG-converted chess pieces. Everything runs locally without cloud dependencies, showcasing the power of consumer hardware for AI applications.",
+        achievements: [
+          "Successfully fine-tuned Gemma 3 270m on chess data using LoRA",
+          "Implemented hardware-adaptive training with automatic fallback systems",
+          "Built real-time FastAPI inference server for move prediction",
+          "Created professional chess GUI with SVG-based piece graphics",
+          "Optimized for Intel Iris Xe and integrated graphics compatibility",
+          "Developed unified launcher system for seamless project management",
+          "Achieved smooth AI vs AI gameplay with configurable thinking speeds",
+          "Implemented complete local AI pipeline from training to visualization"
+        ]
+      },
+      {
         name: "MPC Wallet",
         description: "Cross-platform self-custody wallet using multi-party computation for secure key management, eliminating single points of failure in crypto asset storage.",
         technologies: ["Flutter", "Go", "Dart FFI", "MPC", "Cryptography", "Go"],
